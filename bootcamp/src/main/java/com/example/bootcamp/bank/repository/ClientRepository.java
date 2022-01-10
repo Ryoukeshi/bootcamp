@@ -15,5 +15,5 @@ public interface ClientRepository extends ReactiveMongoRepository<Client, String
    
     Mono<Client> findByName(String name);
 
-    Flux<Client> findByClient_Type(String type);
+    Flux<Client> findByClient_Type(String client_type);
 }
