@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 @Repository
 public interface ClientRepository extends ReactiveMongoRepository<Client, String>{
    
-    Mono<Client> findByName(String name);
+    Mono<Client> findClientsByName(String name);
 
-    Flux<Client> findByClient_Type(String client_type);
+    Flux<Client> findClientsByClient_Type(String client_type);
 }

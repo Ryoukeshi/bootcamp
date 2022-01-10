@@ -8,11 +8,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@Service
 public class ClientImpl implements ClientService {
 
     @Autowired
@@ -67,20 +69,19 @@ public class ClientImpl implements ClientService {
 
         return clientRepository
             .findById(clientId)
-            .flatMap(p -> 
-                clientRepository.deleteById(p.getId()).thenReturn(p));
+            .flatMap(p -> clientRepository.deleteById(p.getId()).thenReturn(p));
     }
 
     @Override
     public Mono<Client> findByName(String name) {
 
-        return clientRepository.findByName(name);
+        return clientRepository.findClientsByName(name);
     }
 
     @Override
     public Flux<Client> findByClient_Type(String client_type) {
 
-        return clientRepository.findByClient_Type(client_type);
+        return clientRepository.findClientsByClient_Type(client_type);
     }
     
 }
