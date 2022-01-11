@@ -7,7 +7,6 @@ import com.example.bootcamp.bank.repository.ClientRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -41,7 +40,7 @@ public class ClientImpl implements ClientService {
                     return clientRepository.save(client)
                 );
           }*/
-          return null;
+          return clientRepository.insert(client);
     }
 
     @Override
@@ -58,8 +57,8 @@ public class ClientImpl implements ClientService {
 
     @Override
     public Mono<Client> update(Client client) {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return clientRepository.findById(client.getId()).flatMap(c -> clientRepository.save(client).thenReturn(c));
     }
 
 
@@ -69,7 +68,7 @@ public class ClientImpl implements ClientService {
 
         return clientRepository
             .findById(clientId)
-            .flatMap(p -> clientRepository.deleteById(p.getId()).thenReturn(p));
+            .flatMap(c -> clientRepository.deleteById(c.getId()).thenReturn(c));
     }
 
     @Override
