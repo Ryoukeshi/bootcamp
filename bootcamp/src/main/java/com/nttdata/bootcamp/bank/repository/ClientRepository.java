@@ -1,6 +1,6 @@
-package com.example.bootcamp.bank.repository;
+package com.nttdata.bootcamp.bank.repository;
 
-import com.example.bootcamp.bank.modelo.*;
+import com.nttdata.bootcamp.bank.modelo.*;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;

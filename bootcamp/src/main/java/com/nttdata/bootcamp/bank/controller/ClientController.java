@@ -1,7 +1,7 @@
-package com.example.bootcamp.bank.controller;
+package com.nttdata.bootcamp.bank.controller;
 
-import com.example.bootcamp.bank.business.ClientService;
-import com.example.bootcamp.bank.modelo.Client;
+import com.nttdata.bootcamp.bank.business.ClientService;
+import com.nttdata.bootcamp.bank.modelo.Client;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.example.bootcamp.bank.modelo;
+package com.nttdata.bootcamp.bank.modelo;
 import java.util.UUID;
 
 import org.springframework.data.annotation.Id;

@@ -1,8 +1,8 @@
-package com.example.bootcamp.bank.impl;
+package com.nttdata.bootcamp.bank.impl;
 
-import com.example.bootcamp.bank.business.ClientService;
-import com.example.bootcamp.bank.modelo.Client;
-import com.example.bootcamp.bank.repository.ClientRepository;
+import com.nttdata.bootcamp.bank.business.ClientService;
+import com.nttdata.bootcamp.bank.modelo.Client;
+import com.nttdata.bootcamp.bank.repository.ClientRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
