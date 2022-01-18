@@ -1,4 +1,4 @@
-package com.example.bootcamp.bank;
+package com.nttdata.bootcamp.bank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

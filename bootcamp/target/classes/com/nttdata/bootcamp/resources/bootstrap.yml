@@ -1,0 +1,14 @@
+spring:
+    application:
+        name: bootcamp-client
+    cloud:
+        config:
+            uri: http://localhost:8084
+            username:
+            password: 
+    data:
+        mongodb:
+            # MongoDB
+            uri: "127.0.0.1"
+            database: MongoClients
+    
