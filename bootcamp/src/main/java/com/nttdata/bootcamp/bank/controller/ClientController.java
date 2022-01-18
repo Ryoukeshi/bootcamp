@@ -3,11 +3,12 @@ package com.nttdata.bootcamp.bank.controller;
 import com.nttdata.bootcamp.bank.business.ClientService;
 import com.nttdata.bootcamp.bank.modelo.Client;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,10 +27,10 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
 
-    private static final Logger log = LoggerFactory.getLogger(ClientController.class);
+    //private static final Logger log = LoggerFactory.getLogger(ClientController.class);
 
-    @GetMapping("/api/clients/specific")
-    public Mono<Client> byId(@RequestParam("id") String id) {
+    @GetMapping("/api/clients/{id}")
+    public Mono<Client> byId(@PathVariable("id") String id) {
         return clientService.findById(id);
     };
 
@@ -37,10 +38,7 @@ public class ClientController {
     public Flux<Client> findByType(
         @RequestParam("type") String type) {
 
-            if (type.isEmpty())
-                return clientService.findAll();
-            else
-                return clientService.findByClient_Type(type);
+            return clientService.findByClient_Type(type);
     }
 
     @GetMapping("/api/clients/findByName")

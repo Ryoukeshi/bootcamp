@@ -20,5 +20,6 @@ public class Client {
     private String id = UUID.randomUUID().toString();
     private String name;
     private String client_type;
+    private boolean debt;
     private String status;
 }
