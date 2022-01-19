@@ -72,13 +72,13 @@ public class ClientImpl implements ClientService {
     }
 
     @Override
-    public Mono<Client> findByName(String name) {
+    public Mono<Client> findClientsByName(String name) {
 
         return clientRepository.findClientsByName(name);
     }
 
     @Override
-    public Flux<Client> findByClient_Type(String client_type) {
+    public Flux<Client> findClientsByClient_Type(String client_type) {
 
         return clientRepository.findClientsByClient_Type(client_type);
     }
