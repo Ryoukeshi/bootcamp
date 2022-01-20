@@ -46,11 +46,15 @@ public class ClientImpl implements ClientService {
     @Override
     public Mono<Client> findById(String clientId) {
 
+        log.info("Finding Client by Id...");
+
         return clientRepository.findById(clientId);
     }
 
     @Override
     public Flux<Client> findAll() {
+
+        log.info("Finding All Clients...");
 
         return clientRepository.findAll();
     }
