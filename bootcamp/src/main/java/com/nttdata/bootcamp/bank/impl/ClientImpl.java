@@ -4,16 +4,18 @@ import com.nttdata.bootcamp.bank.business.ClientService;
 import com.nttdata.bootcamp.bank.modelo.Client;
 import com.nttdata.bootcamp.bank.repository.ClientRepository;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
+@Slf4j
 public class ClientImpl implements ClientService {
 
     @Autowired
@@ -22,25 +24,28 @@ public class ClientImpl implements ClientService {
     @Autowired
     private WebClient webClient;
 
-    private static final Logger log = LoggerFactory.getLogger(ClientImpl.class);
+    //private static final Logger log = LoggerFactory.getLogger(ClientImpl.class);
 
     @Override
     public Mono<Client> create(Client client) {
-        /*
-        if(!client.getName().isBlank()){
+        
+        //if(!client.getName().isBlank()){
 
             return webClient.get()
-            .uri(uriBuilder -> uriBuilder
-                .queryParam("name", client.getName())
+            .uri(uriBuilder -> uriBuilder.queryParam("name", client.getName(),
+                    uriBuilder.queryParam("client_type", client.getClient_type(),
+                    uriBuilder.queryParam("debt", "0"),
+                    uriBuilder.queryParam("status", "1")))
                 .build())
                 .retrieve()
                 .bodyToFlux(Client.class)
                 .next()
-                .flatMap(
-                    return clientRepository.save(client)
-                );
-          }*/
-          return clientRepository.insert(client);
+                .flatMap( c -> {
+                    return clientRepository.save(client);
+                });
+          //}
+
+          //return clientRepository.insert(client);
     }
 
     @Override
