@@ -17,7 +17,7 @@ public interface ClientService {
 
     Mono<Client> delete(String clientId);
 
-    Mono<Client> findByName(String name);
+    Mono<Client> findClientsByName(String name);
 
-    Flux<Client> findByClient_Type(String client_type);
+    Flux<Client> findClientsByClient_Type(String client_type);
 }
