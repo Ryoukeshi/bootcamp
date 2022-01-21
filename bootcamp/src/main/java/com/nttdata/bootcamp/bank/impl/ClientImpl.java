@@ -8,7 +8,7 @@ import com.nttdata.bootcamp.bank.repository.ClientRepository;
 //import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
+//import org.springframework.web.reactive.function.client.WebClient;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
@@ -21,16 +21,16 @@ public class ClientImpl implements ClientService {
     @Autowired
     private ClientRepository clientRepository;
 
-    @Autowired
-    private WebClient webClient;
+    //@Autowired
+    //private WebClient webClient;
 
     //private static final Logger log = LoggerFactory.getLogger(ClientImpl.class);
 
     @Override
     public Mono<Client> create(Client client) {
         
-        //if(!client.getName().isBlank()){
-
+        /*if(!client.getName().isBlank()){
+            
             return webClient.get()
             .uri(uriBuilder -> uriBuilder.queryParam("name", client.getName(),
                     uriBuilder.queryParam("client_type", client.getClient_type(),
@@ -43,9 +43,11 @@ public class ClientImpl implements ClientService {
                 .flatMap( c -> {
                     return clientRepository.save(client);
                 });
-          //}
+          }*/
 
-          //return clientRepository.insert(client);
+          //return clientRepository.save(client);
+
+          return clientRepository.insert(client);
     }
 
     @Override

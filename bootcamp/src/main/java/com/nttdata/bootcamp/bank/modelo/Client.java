@@ -17,9 +17,9 @@ import lombok.Setter;
 public class Client {
 
     @Id
-    private String id = UUID.randomUUID().toString();
+    private  String id = UUID.randomUUID().toString();
     private String name;
-    private String client_type;
+    private ClientType client_type;
     private boolean debt;
     private String status;
 }

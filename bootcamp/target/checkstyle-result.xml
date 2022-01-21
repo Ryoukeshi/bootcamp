@@ -29,12 +29,11 @@
 <file name="C:\Users\rrabines\Documents\bootcamp-client\bootcamp\src\main\java\com\nttdata\bootcamp\bank\impl\ClientImpl.java">
 <error line="1" column="9" severity="warning" message="El nombre &apos;com.nttdata.bootcamp.bank.impl&apos; debe coincidir con el patrón &apos;com\.tdp\.ms\.*(\.[a-z][a-zA-Z0-9]+)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
 <error line="9" column="1" severity="warning" message="Separación extra en el grupo de importación antes &apos;org.springframework.beans.factory.annotation.Autowired&apos;" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="13" column="1" severity="warning" message="Orden lexicográfico incorrecto de &apos;lombok.extern.slf4j.Slf4j&apos; importación. En caso de ser antes de &apos;org.springframework.web.reactive.function.client.WebClient&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="13" column="1" severity="warning" message="Orden lexicográfico incorrecto de &apos;lombok.extern.slf4j.Slf4j&apos; importación. En caso de ser antes de &apos;org.springframework.stereotype.Service&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
 <error line="13" column="1" severity="warning" message="Separación extra en el grupo de importación antes &apos;lombok.extern.slf4j.Slf4j&apos;" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="32" column="9" severity="warning" message="Comentario tiene nivel incorrecto muesca 8, que se espera es 12, la sangría debe estar al mismo nivel que la línea 34." source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
-<error line="34" column="13" severity="warning" message="method def el descendiente en el nivel de sangrado 12 no está al nivel correcto, 8" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="43" column="25" severity="warning" message="&apos;(&apos; está seguido de espacios en blanco." source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
-<error line="90" column="57" severity="warning" message="Parameter name &apos;client_type&apos; must match pattern &apos;^[a-z]([a-z0-9][a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="32" column="9" severity="warning" message="Bloquear comentario tiene nivel incorrecto muesca 8, que se espera es 10, la sangría debe estar al mismo nivel que la línea 50." source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="50" column="11" severity="warning" message="method def el descendiente en el nivel de sangrado 10 no está al nivel correcto, 8" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="92" column="57" severity="warning" message="Parameter name &apos;client_type&apos; must match pattern &apos;^[a-z]([a-z0-9][a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
 </file>
 <file name="C:\Users\rrabines\Documents\bootcamp-client\bootcamp\src\main\java\com\nttdata\bootcamp\bank\modelo\Client.java">
 <error line="1" column="9" severity="warning" message="El nombre &apos;com.nttdata.bootcamp.bank.modelo&apos; debe coincidir con el patrón &apos;com\.tdp\.ms\.*(\.[a-z][a-zA-Z0-9]+)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
@@ -45,7 +44,10 @@
 <error line="8" column="1" severity="warning" message="Orden lexicográfico incorrecto de &apos;lombok.Getter&apos; importación. En caso de ser antes de &apos;org.springframework.data.mongodb.core.mapping.Document&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
 <error line="9" column="1" severity="warning" message="Orden lexicográfico incorrecto de &apos;lombok.NoArgsConstructor&apos; importación. En caso de ser antes de &apos;org.springframework.data.mongodb.core.mapping.Document&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
 <error line="10" column="1" severity="warning" message="Orden lexicográfico incorrecto de &apos;lombok.Setter&apos; importación. En caso de ser antes de &apos;org.springframework.data.mongodb.core.mapping.Document&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="22" column="20" severity="warning" message="Member name &apos;client_type&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
+<error line="22" column="24" severity="warning" message="Member name &apos;client_type&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
+</file>
+<file name="C:\Users\rrabines\Documents\bootcamp-client\bootcamp\src\main\java\com\nttdata\bootcamp\bank\modelo\ClientType.java">
+<error line="1" column="9" severity="warning" message="El nombre &apos;com.nttdata.bootcamp.bank.modelo&apos; debe coincidir con el patrón &apos;com\.tdp\.ms\.*(\.[a-z][a-zA-Z0-9]+)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
 </file>
 <file name="C:\Users\rrabines\Documents\bootcamp-client\bootcamp\src\main\java\com\nttdata\bootcamp\bank\repository\ClientRepository.java">
 <error line="1" column="9" severity="warning" message="El nombre &apos;com.nttdata.bootcamp.bank.repository&apos; debe coincidir con el patrón &apos;com\.tdp\.ms\.*(\.[a-z][a-zA-Z0-9]+)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
