@@ -3,6 +3,7 @@ package com.nttdata.bootcamp.bank.controller;
 import com.nttdata.bootcamp.bank.business.ClientService;
 import com.nttdata.bootcamp.bank.modelo.Client;
 
+import com.nttdata.bootcamp.bank.modelo.ClientDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,50 +29,51 @@ public class ClientController {
     //private static final Logger log = LoggerFactory.getLogger(ClientController.class);
 
     @GetMapping("/clients/{id}")
-    public Mono<ResponseEntity<Client>> byId(@PathVariable("id") String id) {
-        return clientService.findById(id)
-                .flatMap(c -> Mono.just(ResponseEntity.ok(c)))
-                .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
+    public Mono<ClientDTO> byId(@PathVariable("id") String id) {
+        return clientService.findById(id);
     };
 
+    @GetMapping("/clients")
+    public Flux<ClientDTO> findAll(){
+        return clientService.findAll();
+    }
+
     @GetMapping("/clients/findByType")
-    public Flux<ResponseEntity<Client>> findByType(
+    public Flux<ClientDTO> findByType(
         @RequestParam("type") String type) {
 
-            return clientService.findClientsByClient_Type(type)
-                .flatMap(c -> Flux.just(ResponseEntity.ok(c)))
-                .switchIfEmpty(Flux.just(ResponseEntity.notFound().build()));
+            return clientService.findByClientType(type);
     }
 
     @GetMapping("/clients/findByName")
-    public Mono<ResponseEntity<Client>> findByName(
+    public Mono<ResponseEntity<ClientDTO>> findByName(
         @RequestParam("name") String name) {
 
-        return clientService.findClientsByName(name)
+        return clientService.findByName(name)
                 .flatMap(c -> Mono.just(ResponseEntity.ok(c)))
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
 
     @PostMapping("/clients")
-    public Mono<Client> create(@RequestBody Client client){
+    public Mono<ClientDTO> create(@RequestBody ClientDTO clientDTO){
 
         log.info("----create----");
         
-        return clientService.create(client);
+        return clientService.create(clientDTO);
     }
 
-    @PutMapping("/clients")
-    public Mono<ResponseEntity<Client>> update(@RequestBody Client client){
+    @PutMapping("/clients/{id}")
+    public Mono<ResponseEntity<ClientDTO>> update(@PathVariable String id,@RequestBody ClientDTO clientDTO){
 
         log.info("----update----");
         
-        return clientService.update(client)
+        return clientService.update(clientDTO, id)
             .flatMap(clientUpdate -> Mono.just(ResponseEntity.ok(clientUpdate)))
             .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
 
     @DeleteMapping("/clients/{id}")
-    public Mono<ResponseEntity<Client>> delete(@PathVariable ("id") String id){
+    public Mono<ResponseEntity<ClientDTO>> delete(@PathVariable ("id") String id){
         
         log.info("----delete----");
 
