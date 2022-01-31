@@ -7,7 +7,7 @@
 		<version>2.6.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>com.nttdata.bootcamp</groupId>
 	<artifactId>bootcamp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bootcamp</name>
