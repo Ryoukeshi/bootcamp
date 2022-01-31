@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bootcamp" />
+        <module name="bootcamp-client" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="bootcamp" options="-parameters" />
+      <module name="bootcamp-client" options="-parameters" />
     </option>
   </component>
 </project>
