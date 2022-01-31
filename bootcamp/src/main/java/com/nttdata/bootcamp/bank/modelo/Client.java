@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Getter
 @Setter
@@ -16,10 +17,31 @@ import lombok.Setter;
 @Document(collection = "clients")
 public class Client {
 
+    @Field(name = "id")
     @Id
-    private  String id = UUID.randomUUID().toString();
+    private  String id;
+
+    @Field(name = "name")
     private String name;
-    private ClientType client_type;
+
+    @Field(name = "lastName")
+    private String lastName;
+
+    @Field(name = "documentType")
+    private String documentType;
+
+    @Field(name = "documentNumber")
+    private String documentNumber;
+
+    @Field(name = "clientType")
+    private String clientType;
+
+    @Field(name = "clientProfile")
+    private String clientProfile;
+
+    @Field(name = "debt")
     private boolean debt;
+
+    @Field(name = "status")
     private String status;
 }

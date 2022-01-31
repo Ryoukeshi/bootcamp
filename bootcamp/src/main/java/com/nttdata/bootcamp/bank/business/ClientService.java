@@ -2,22 +2,23 @@ package com.nttdata.bootcamp.bank.business;
 
 import com.nttdata.bootcamp.bank.modelo.Client;
 
+import com.nttdata.bootcamp.bank.modelo.ClientDTO;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface ClientService {
 
-    Mono<Client> create(Client client);
+    Mono<ClientDTO> create(ClientDTO client);
 
-    Mono<Client> findById(String clientId);
+    Mono<ClientDTO> findById(String clientId);
     
-    Flux<Client> findAll();
+    Flux<ClientDTO> findAll();
 
-    Mono<Client> update(Client client);
+    Mono<ClientDTO> update(ClientDTO clientDTO, String id);
 
-    Mono<Client> delete(String clientId);
+    Mono<ClientDTO> delete(String clientId);
 
-    Mono<Client> findClientsByName(String name);
+    Mono<ClientDTO> findByName(String name);
 
-    Flux<Client> findClientsByClient_Type(String client_type);
+    Flux<ClientDTO> findByClientType(String client_type);
 }
