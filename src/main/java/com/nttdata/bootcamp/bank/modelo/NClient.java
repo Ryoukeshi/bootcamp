@@ -21,6 +21,15 @@ public class NClient {
     @Field(name = "lastName")
     private String lastName;
 
+    @Field(name = "documentType")
+    private String documentType;
+
+    @Field(name = "documentNumber")
+    private String documentNumber;
+
     @Field(name = "phoneNumber")
     private String phoneNumber;
+
+    @Field(name = "email")
+    private String email;
 }
