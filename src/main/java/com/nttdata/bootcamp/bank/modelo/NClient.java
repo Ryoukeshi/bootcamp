@@ -4,12 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Document(collection = "noclients")
 public class NClient {
 
     @Field(name = "id")
@@ -32,4 +34,7 @@ public class NClient {
 
     @Field(name = "email")
     private String email;
+
+    @Field(name = "status")
+    private String status;
 }
